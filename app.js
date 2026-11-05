@@ -107,6 +107,7 @@ function markSeen(id) {
 /* ---------- inline formatting ---------- */
 function inl(t, hl) {
   let s = esc(t).replace(/([·\/])/g, '$1<wbr>').replace(/\(/g, '<wbr>(');
+  s = s.replace(/==(.+?)==/g, '<mark class="hl">$1</mark>');
   s = s.replace(/!!(.+?)!!/g, '<span class="danger">$1</span>');
   s = s.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
   s = s.replace(/§(\d)\.([A-Za-z][A-Za-z0-9_]*)/g, (m, n, k) => {
@@ -121,7 +122,7 @@ function highlight(html, terms) {
   return html.split(/(<[^>]+>)/).map(p => p.startsWith('<') ? p : p.replace(re, '<mark>$1</mark>')).join('');
 }
 const nice = s => String(s).replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' · ');
-const plain = t => String(t).replace(/!!|\*\*/g, '');
+const plain = t => String(t).replace(/!!|\*\*|==/g, '');
 
 /* ---------- views ---------- */
 function route() {

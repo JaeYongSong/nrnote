@@ -136,3 +136,7 @@ figcaption{font-size:.8em;color:var(--sub);margin-top:6px;line-height:1.5}
 .seg button.on{background:var(--accent);color:#fff}
 .toast{position:fixed;left:50%;bottom:calc(20px + var(--safe-bot));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:.88em;z-index:70;max-width:90vw}
 .fab{position:fixed;right:16px;bottom:calc(16px + var(--safe-bot));z-index:30;border:0;background:var(--accent);color:#fff;border-radius:999px;padding:12px 16px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+
+mark.hl{background:#fff2a8;color:inherit;font-weight:700;padding:0 2px;border-radius:3px}
+@media (prefers-color-scheme: dark){mark.hl{background:#6b5a00;color:#fff}}
+:root[data-theme="dark"] mark.hl{background:#6b5a00;color:#fff}
