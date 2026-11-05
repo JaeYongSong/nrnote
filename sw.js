@@ -2,7 +2,7 @@
    - app shell: cache-first, refreshed when VER changes
    - manifest.json: network-first (so new note versions are seen), cache fallback
    - data/notes.bin?v=<version> and img/<hash>.bin: cache-first (their names change when content changes) */
-const VER = '336c0599c145-4ac60';
+const VER = 'f5766d7a0b8d-c7178';
 const SHELL = 'nr-shell-' + VER, DATA = 'nr-data';
 const SHELL_FILES = ['./', 'index.html', 'app.css?v=' + VER, 'app.js?v=' + VER, 'manifest.webmanifest', 'icon-180.png', 'icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(SHELL).then(c => c.addAll(SHELL_FILES)).then(() => self.skipWaiting())); });
